@@ -1,11 +1,13 @@
+import java.util.Date;
 public class Morador {
-
+    Bilbioteca Bibli = new Bilbioteca();
     protected String Nome;
     protected String CPF;
     protected Date DataNascimento;
     protected int ID;
     protected int tam;
     protected Livro[] LivrosAlugados;
+    Morador(){}
 
     //métodos
 
@@ -27,6 +29,7 @@ public class Morador {
 
     int setID(int ID){
         this.ID = ID;
+        return ID;
     }
 
 
@@ -41,8 +44,8 @@ public class Morador {
     }
 
     boolean pegarLivro(Livro livro){
-        for(int i=0; i<tamanhoVetorLivros; i++){
-            if(Biblioteca.livros[i]==livro) break;
+        for(int i=0; i< LivrosAlugados.length; i++){
+            if(Bibli.livros[i]==livro) break;
             else return false;
         }
 
@@ -50,6 +53,7 @@ public class Morador {
            if(LivrosAlugados[i]==livro){
                return false;
            }
+           return true;
         }
 
         for(int i=0; i<tam; i++){

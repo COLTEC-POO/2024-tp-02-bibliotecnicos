@@ -1,8 +1,8 @@
-public static class Bilbioteca
+public class Bilbioteca
 {
-    static int tamanhoVetorLivros = 10;
-    static int indiceVetorLivros = 0;
-    static livros[] = new Livro[];
+    public static int tamanhoVetorLivros = 10;
+    public static int indiceVetorLivros = 0;
+    public static Livro livros[] = new Livro[tamanhoVetorLivros];
     //usuario[] = new usuario[y];
     static String nome;
 
@@ -10,16 +10,6 @@ public static class Bilbioteca
     {
 
     }*/
-
-    static void cadastrarLivro()
-    {
-        if(indiceVetorLivros == tamanhoVetorLivros - 1) this.aumentaVetorLivros();
-
-        System.out.println("CADASTRAR NOVO LIVRO:");
-        System.out.printf("NOME DO LIVRO: ");
-        //scan
-        System.out.printf(" LIVRO: ");
-    }
 
     private void aumentaVetorLivros()
     {
@@ -33,5 +23,14 @@ public static class Bilbioteca
         livros = novoVetor;
 
         this.tamanhoVetorLivros *= 2;
+    }
+    public void cadastrarLivro()
+    {
+        if(indiceVetorLivros == tamanhoVetorLivros - 1) this.aumentaVetorLivros();
+
+        System.out.println("CADASTRAR NOVO LIVRO:");
+        System.out.printf("NOME DO LIVRO: ");
+        //scan
+        System.out.printf(" LIVRO: ");
     }
 }
