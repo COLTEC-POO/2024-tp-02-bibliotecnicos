@@ -1,4 +1,6 @@
-public class Aluno {
+import java.util.Date;
+
+public class Aluno extends Morador {
     String Escola;
 
 
