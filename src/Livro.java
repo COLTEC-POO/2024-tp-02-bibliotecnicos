@@ -1,8 +1,17 @@
 public class Livro {
+    GlobalVariable GloVar = new GlobalVariable();
     protected String Titulo;
     protected String Autor;
     protected int AnoDePublicacao;
     protected String Editora;
+    protected int id = GloVar.getId();
+    Livro(){
+        //Variavel intermediaria
+        int Inter = GloVar.getId();
+        Inter++;
+        GloVar.setId(Inter);
+        System.out.println(id);
+    }
 
     public String getTitulo() {
         return this.Titulo;
@@ -97,5 +106,6 @@ public class Livro {
         HarryPotter7.setAnoDePublicacao(2007);
         HarryPotter7.imprimir();
         System.out.println("\n");
+
     }
 }
