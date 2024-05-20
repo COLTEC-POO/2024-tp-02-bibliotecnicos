@@ -11,24 +11,21 @@ public class Morador {
 
     //métodos
 
-    String getNome(){
+    String getNome() {
         return this.Nome;
     }
 
-    String getCPF(){
+    String getCPF() {
         return this.CPF;
     }
 
-    Date getDataNascimento(){
+    Date getDataNascimento() {
         return this.DataNascimento;
     }
 
-    int getID(){
+    int getID() {
         return this.ID;
     }
-
-    void setID(int ID) {this.ID = ID;}
-
 
     boolean devolverLivro(Livro livro) {
 
@@ -40,21 +37,17 @@ public class Morador {
                 return true;
             }
         }
+
         return false;
     }
 
     boolean pegarLivro(Livro livro) {
 
-        for(int i = 0; i < Biblioteca.tamanhoVetorLivros; i++) {
-
-            if(Biblioteca.livros[i] == livro) break;
-            else return false;
-        }
-
         for(int i = 0; i < tam; i++) {
 
            if(LivrosAlugados[i]==livro) {
 
+               System.out.println("Esse usuario ja pegou emprestado um exemplar dess livro!");
                return false;
            }
         }
@@ -65,6 +58,8 @@ public class Morador {
                 return true;
             }
         }
+
+        System.out.println("Esse usuario atingiu o limite de livros que pode pegar emprestado!");
         return false;
     }
 
@@ -84,5 +79,9 @@ public class Morador {
         this.DataNascimento = DataNascimento;
         tam = 2;
         LivrosAlugados = new Livro[tam];
+    }
+
+    public  Morador() {
+
     }
 }

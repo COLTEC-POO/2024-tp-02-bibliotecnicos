@@ -20,26 +20,19 @@ public class Livro {
         return this.Titulo;
     }
 
-    //public void setTitulo(String titulo) {this.Titulo = titulo;}
-
     public String getAutor() {
         return this.Autor;
     }
-
-    //public void setAutor(String autor) {this.Autor = autor;}
 
     public int getAnoDePublicacao() {
         return this.AnoDePublicacao;
     }
 
-    //public void setAnoDePublicacao(int anoDePublicacao) {this.AnoDePublicacao = anoDePublicacao;}
-
     public String getEditora() {
         return this.Editora;
     }
 
-
-    //public void setEditora(String editora) {this.Editora = editora;}
+    public int getNumeroDeExemplaresDisponiveis() {return this.numeroDeExemplaresDisponiveis;}
 
     void imprimir() {
 
@@ -57,7 +50,7 @@ public class Livro {
         this.numeroDeExemplaresTotal++;
     }
 
-    public boolean emprestaExemplar() {
+    public boolean emprestaExemplar(Morador m) {
 
         if(this.numeroDeExemplaresDisponiveis == 0) {
 
@@ -65,9 +58,23 @@ public class Livro {
             return false;
         }
 
-        this.numeroDeExemplaresDisponiveis--;
-        return true;
+        if(m.pegarLivro(this)) {
+
+            this.numeroDeExemplaresDisponiveis--;
+            return true;
+        }
+
+        return false;
     }
 
-    public void devolveExemplar() {this.numeroDeExemplaresDisponiveis++;}
+    public boolean devolveExemplar(Morador m) {
+
+        if(m.devolverLivro(this)) {
+
+            this.numeroDeExemplaresDisponiveis++;
+            return true;
+        }
+
+        return false;
+    }
 }
