@@ -25,7 +25,7 @@ public class Biblioteca {
 
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Ola,");
+        System.out.println("Ola!");
         System.out.println("Seja bem vindo aos sistema de gerenciamento da biblioteca: " +Biblioteca.nome);
         System.out.println(" ");
 
